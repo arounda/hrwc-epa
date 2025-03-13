@@ -1,0 +1,46 @@
+@import '@/styles/utils/mixins';
+
+#policiesSection {
+  padding-top: 12.2rem;
+}
+
+.policiesMain {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  @include onMediumDesktop {
+    max-width: 880px;
+  }
+}
+
+.policiesHeading {
+  color: var(--white);
+  font-family: var(--font-gilroy);
+  font-size: 4.4rem;
+  font-weight: 600;
+  line-height: 120%;
+  padding: 4rem 1.6rem;
+  border-radius: 24px;
+  background: var(--Gradient-2, linear-gradient(105deg, #242BFF 15.02%, #1B0092 109.42%));
+
+  @include onTablet {
+    padding: 5rem 3.2rem;
+    font-size: 4.6rem;
+  }
+
+  @include onLaptop {
+    padding: 6rem 4rem;
+    font-size: 4.8rem;
+  }
+
+  @include onLargeDesktop {
+    padding: 7rem 4rem;
+    font-size: 5rem;
+  }
+}
+
+.policiesText {
+  color: var(--dark-v2);
+}

@@ -1,0 +1,55 @@
+@import '@/styles/utils/mixins';
+
+.notFoundWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.notFoundLogo {
+  position: fixed;
+  top: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.notFoundTitle {
+  margin-bottom: .8rem;
+  font-family: var(--font-gilroy);
+  font-size: 10rem;
+  font-weight: 600;
+  line-height: 120%;
+
+  background: var(--Gradient-2, linear-gradient(105deg, #242BFF 15.02%, #1B0092 109.42%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include onLaptop {
+    font-size: 12rem;
+  }
+}
+
+.notFoundSubTitle {
+  margin-bottom: 2.4rem;
+  color: #090C18;
+  text-align: center;
+  font-family: var(--font-gilroy);
+  font-size: 4.8rem;
+  font-weight: 500;
+  line-height: 120%;
+
+  @include onTablet {
+    font-size: 5.2rem;
+  }
+
+  @include onLaptop {
+    font-size: 5.4rem;
+  }
+
+  @include onLargeDesktop {
+    font-size: 6.6rem;
+  }
+}

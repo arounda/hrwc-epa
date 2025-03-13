@@ -1,0 +1,247 @@
+@import './reset.scss';
+@import './utils/mixins';
+
+:root {
+  font-size: 10px;
+  /* reset: so that 10px = 1rem */
+  font-weight: 400;
+  font-style: normal;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --primary: #2B34FF;
+  --light-blue: #F1F8FF;
+  --light-blue-v2: #419AFF;
+  --white: #ffffff;
+  --black: #000000;
+  --dark: #090C18;
+  --dark-v2: #0B0B13;
+
+  //use here
+
+  --btn-hover-transition: 250ms;
+}
+
+body {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-inter);
+  color: var(--black);
+  background-color: var(--white);
+}
+
+main {
+  flex-grow: 1;
+}
+
+.section {
+  padding-top: 10rem;
+
+  @include onTablet {
+    padding-top: 12rem;
+  }
+
+  @include onLaptop {
+    padding-top: 14rem;
+  }
+
+  @include onLargeDesktop {
+    padding-top: 16rem;
+  }
+
+  &.is-padding-block {
+    padding-block: 10rem;
+
+    @include onTablet {
+      padding-block: 12rem;
+    }
+
+    @include onLaptop {
+      padding-block: 14rem;
+    }
+
+    @include onLargeDesktop {
+      padding-block: 16rem;
+    }
+
+    &.is-m {
+      padding-block: 8rem;
+
+      @include onTablet {
+        padding-block: 10rem;
+      }
+
+      @include onLaptop {
+        padding-block: 12rem;
+      }
+
+      @include onLargeDesktop {
+        padding-block: 14rem;
+      }
+    }
+
+    &.is-hero {
+      padding-top: 14.2rem;
+      padding-bottom: 10rem;
+
+      @include onTablet {
+        padding-top: 16.2rem;
+        padding-bottom: 12rem;
+      }
+
+      @include onLaptop {
+        padding-bottom: 14rem;
+      }
+
+      @include onLargeDesktop {
+        padding-top: 18rem;
+        padding-bottom: 16rem;
+      }
+    }
+  }
+
+  &.no-paddings {
+    padding: 0;
+  }
+}
+
+.container {
+  margin-inline: auto;
+  max-width: 1440px;
+  padding-inline: 1.6rem;
+
+  @include onTablet {
+    padding-inline: 3.2rem;
+  }
+
+  @include onLaptop {
+    padding-inline: 4rem;
+  }
+
+  @include onLargeDesktop {
+    padding-inline: 8rem;
+  }
+}
+
+.heading-h1 {
+  font-family: var(--font-gilroy);
+  text-align: center;
+  font-size: 4.8rem;
+  font-weight: 600;
+  line-height: 120%;
+
+  @include onTablet {
+    font-size: 5.2rem;
+  }
+
+  @include onLaptop {
+    font-size: 5.4rem;
+    text-align: left;
+  }
+
+  @include onMediumDesktop {
+    font-size: 6.6rem;
+  }
+}
+
+.heading-h2 {
+  color: var(--black);
+  font-family: var(--font-gilroy);
+  font-size: 4.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+
+  @include onTablet {
+    font-size: 4.6rem;
+  }
+
+  @include onLaptop {
+    font-size: 4.8rem;
+  }
+
+  @include onMediumDesktop {
+    font-size: 5rem;
+  }
+}
+
+.heading-h3 {
+  font-family: var(--font-gilroy);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 150%;
+
+  @include onTablet {
+    font-size: 2.8rem;
+  }
+
+  @include onLaptop {
+    font-size: 3rem;
+  }
+
+  @include onMediumDesktop {
+    font-size: 3.2rem;
+  }
+}
+
+.heading-h4 {
+  font-family: var(--font-gilroy);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.heading-h5 {
+  color: var(--black);
+  font-family: var(--font-gilroy);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.text {
+  color: var(--black);
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+.is-s {
+  font-size: 1.4rem;
+}
+
+.is-centered {
+  text-align: center;
+}
+
+.is-white {
+  color: var(--white);
+}
+
+.mb-8 {
+  margin-bottom: .8rem;
+}
+
+.mb-32 {
+  margin-bottom: 3.2rem;
+}
+
+.is-bold {
+  font-weight: 600;
+}
+
+.is-medium {
+  font-weight: 500;
+}
+
+.MuiPaper-root,
+.MuiAccordionSummary-content {
+  margin: 0 !important;
+}
+
+.MuiPaper-root::before {
+  display: none;
+}

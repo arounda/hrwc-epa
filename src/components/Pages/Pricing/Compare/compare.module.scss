@@ -1,0 +1,46 @@
+@import '@/styles/utils/mixins';
+
+.compareWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.compareImageWrapper {
+  overflow: scroll;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.compareTabletImage {
+  @include onMobile {
+    min-width: 704px;
+  }
+
+  @include onLaptop {
+    display: none;
+  }
+}
+
+.compareLaptopImage {
+  display: none;
+
+  @include onLaptop {
+    display: block;
+  }
+
+  @include onLargeDesktop {
+    display: none;
+  }
+}
+
+.compareDesktopImage {
+  display: none;
+
+  @include onLargeDesktop {
+    display: block;
+  }
+}

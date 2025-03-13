@@ -1,0 +1,90 @@
+@import '@/styles/utils/mixins';
+
+.footer {
+  padding-block: 4rem;
+  background-color: var(--dark);
+  color: var(--white);
+
+  @include onLaptop {
+    padding-block: 6rem;
+  }
+
+  @include onMediumDesktop {
+    padding-block: 8.2rem;
+  }
+}
+
+.footerWrapper {
+  display: grid;
+  grid-gap: 6rem;
+
+  @include onTablet {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include onLaptop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 0;
+  }
+
+  @include onMediumDesktop {
+    gap: 7.2rem;
+  }
+}
+
+.footerLogo {
+  @include onTablet {
+    grid-column: span 2;
+  }
+
+  @include onLaptop {
+    grid-column: 1;
+  }
+}
+
+.footerMainLinks {
+  @include onLaptop {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include onMediumDesktop {
+    & .footerLinkList {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+.footerLinkList {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.footerLink {
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  transition: all 250ms;
+}
+
+.footerLink:hover {
+  color: var(--light-blue-v2);
+}
+
+.footerSlogan,
+.footerCopyright {
+  font-size: 1.4rem;
+  line-height: 150%;
+}
+
+.footerSlogan {
+  opacity: .5;
+
+  @include onLaptop {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+}

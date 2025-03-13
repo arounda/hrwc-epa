@@ -1,0 +1,147 @@
+@import '@/styles/utils/mixins';
+
+.partnerWrapper,
+.parnterMain,
+.partnerMainTop,
+.partnerCards {
+  display: flex;
+  flex-direction: column;
+}
+
+.partnerWrapper {
+  gap: 6rem;
+
+  @include onLargeDesktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.parnterMain {
+  gap: 2.4rem;
+
+  @include onLaptop {
+    justify-content: space-between;
+  }
+}
+
+.partnerMainTop {
+  gap: 2.4rem;
+}
+
+.partnerMainBottom {
+  display: grid;
+  gap: 2.4rem;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.8rem;
+  }
+
+  @include onLaptop {
+    gap: 4rem;
+  }
+}
+
+.partnerMetricNum {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: .8rem;
+
+  font-family: var(--font-gilroy);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.partnerCards {
+  position: relative;
+  gap: 2.4rem;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4.8rem;
+  }
+}
+
+.partnerCard {
+  display: grid;
+  column-gap: 1.2rem;
+  row-gap: .8rem;
+  align-items: center;
+  grid-template-columns: 24px 1fr;
+
+  @include onTablet {
+    display: block;
+  }
+}
+
+.partnerCardsSeparatorMob {
+  height: 1px;
+  opacity: 0.8;
+  background: linear-gradient(90deg, rgba(214, 233, 255, 0.00) 0%, #C3D6E8 50%, rgba(214, 233, 255, 0.00) 100%);
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.partnerCardsSeparator,
+.partnerCardsSeparatorVertical {
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  opacity: 0.8;
+  background: linear-gradient(90deg, rgba(214, 233, 255, 0.00) 0%, #C3D6E8 50%, rgba(214, 233, 255, 0.00) 100%);
+
+  @include onTablet {
+    display: block;
+  }
+}
+
+.partnerCardsSeparatorVertical {
+  height: 100%;
+  width: 1px;
+  top: 0;
+  left: 50%;
+
+  background: linear-gradient(0deg, rgba(214, 233, 255, 0.00) 0%, #C3D6E8 50%, rgba(214, 233, 255, 0.00) 100%);
+}
+
+.partnerIconWrapper {
+  @include onTablet {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 1.2rem;
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 2px 2px 20px 0px rgba(68, 102, 140, 0.07);
+  }
+}
+
+.partnerHeading {
+  color: var(--black);
+  font-family: var(--font-gilroy);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 150%;
+
+  @include onTablet {
+    margin-top: 2.4rem;
+    margin-bottom: .8rem;
+  }
+}
+
+.partnerText {
+  color: var(--black);
+  font-size: 1.6rem;
+  line-height: 150%;
+  grid-column: span 2;
+}

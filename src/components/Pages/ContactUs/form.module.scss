@@ -1,0 +1,85 @@
+@import '@/styles/utils/mixins';
+
+.formWrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(5px);
+}
+
+.formContent {
+  position: relative;
+  max-height: 94vh;
+  overflow: scroll;
+  width: 92%;
+  padding: 1.6rem;
+  background-color: var(--white);
+  border-radius: 24px;
+  box-shadow: 4px 4px 40px 0px rgba(68, 102, 140, 0.10);
+
+  @include onTablet {
+    padding: 2.4rem;
+    max-width: 526px;
+  }
+
+  @include onLargeDesktop {
+    padding: 4rem;
+  }
+}
+
+.formCloseIcon {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  cursor: pointer;
+
+  @include onTablet {
+    top: 2.4rem;
+    right: 2.4rem;
+  }
+
+  @include onLargeDesktop {
+    top: 4rem;
+    right: 4rem;
+  }
+}
+
+.formOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.form {
+  margin-top: 2.4rem;
+}
+
+.formBottom {
+  margin-top: 2.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formBottomRequired {
+  font-size: 1.6rem;
+  opacity: .5;
+}
+
+.checkWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid #C7CFD8;
+}
+
+.checkWrapper svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}

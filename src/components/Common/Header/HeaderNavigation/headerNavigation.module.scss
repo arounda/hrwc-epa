@@ -1,0 +1,83 @@
+@import '@/styles/utils/mixins';
+
+.headerDesktopNav {
+  display: none;
+  gap: 24px;
+
+  @include onMediumDesktop {
+    display: flex;
+  }
+}
+
+.headerNavListItem {
+  position: relative;
+}
+
+.headerNavLink:hover {
+  color: var(--primary);
+
+  @include onMediumDesktop {
+    color: var(--white);
+  }
+}
+
+.headerNavListItem:hover span,
+.headerNavListItem:hover path {
+  color: var(--light-blue-v2);
+  stroke: var(--light-blue-v2);
+}
+
+.headerNavLink {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--dark-v2);
+  transition: all var(--btn-hover-transition);
+
+  @include onMediumDesktop {
+    color: var(--white);
+  }
+}
+
+//mobile navigation
+.headerMobileNav {
+  position: fixed;
+  inset: 0;
+  transition: all 300ms;
+
+  .headerMobileNavWrapper,
+  .headerMobileNavList,
+  .headerMobileNavSolutions {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .headerMobileNavWrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 10.6rem;
+    padding-inline: 1.6rem;
+    overflow: scroll;
+    box-shadow: 4px 4px 40px 0px rgba(68, 102, 140, 0.10);
+
+    @include onTablet {
+      padding: 4rem 3.2rem;
+      height: auto;
+      border-radius: 0 0 24px 24px;
+    }
+
+    @include onLaptop {
+      height: 100%;
+      max-width: 480px;
+      margin-left: auto;
+      border-radius: 24px 0 0 24px;
+    }
+  }
+
+  .headerMobileNavOverlay {
+    position: absolute;
+    inset: 0;
+  }
+}

@@ -1,0 +1,62 @@
+@import '@/styles/utils/mixins';
+
+.faqWrapper {
+  max-width: 1040px;
+  margin-inline: auto;
+}
+
+.faqTop h2 {
+  @include onMobile {
+    text-align: center;
+  }
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  margin-top: 3.2rem;
+}
+
+.faqItem {
+  & svg {
+    min-width: 16px;
+  }
+}
+
+.faqItemsDivider {
+  height: 1px;
+  opacity: 0.8;
+  background: linear-gradient(90deg, rgba(214, 233, 255, 0.00) 0%, #C3D6E8 50%, rgba(214, 233, 255, 0.00) 100%);
+
+  &:last-child {
+    display: none;
+  }
+}
+
+.faqQuestionContainer {
+  width: 100%;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-family: var(--font-gilroy);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 150%;
+
+  &.active svg {
+    transform: rotate(45deg);
+  }
+}
+
+.faqAnswerWrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: all 250ms;
+}
+
+.faqAnswer {
+  padding-top: 2.4rem;
+}
