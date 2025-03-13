@@ -62,7 +62,7 @@ const HeaderNavigation = ({
         <div
           className={s.headerMobileNavOverlay}
           onClick={() => onMenuOpen(false)}
-        ></div>
+        />
       </div>
     </nav>
   )

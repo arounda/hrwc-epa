@@ -1,0 +1,139 @@
+@import '@/styles/utils/mixins';
+
+.userLoginWrapper {
+  display: grid;
+  gap: 6rem;
+
+  @include onTablet {
+    gap: 8rem;
+  }
+
+  @include onLargeDesktop {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+}
+
+.userLoginFormWrapper,
+.userLoginForm,
+.userLoginFormInputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.userLoginFormWrapper {
+  width: 100%;
+  max-width: 610px;
+  margin-inline: auto;
+  padding: 1.6rem;
+  gap: 2.4rem;
+  border-radius: 20px;
+  background: var(--primary);
+  box-shadow: 2px 2px 20px 0px rgba(68, 102, 140, 0.07);
+
+  @include onTablet {
+    padding: 2.6rem 4rem;
+  }
+}
+
+.userLoginFormTop h2 {
+  font-family: var(--font-gilroy);
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.userLoginForm {
+  gap: 2.4rem;
+}
+
+.userLoginFormInputs {
+  gap: 1.6rem;
+}
+
+.userLoginFormInput {
+  padding: 1.6rem 1.8rem;
+  font-size: 1.6rem;
+  border-radius: 12px;
+}
+
+.userFormBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userLoginFormButton {
+  min-height: 52px;
+  min-width: 160px;
+  display: block;
+  color: var(--primary);
+  border-radius: 46px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: white;
+}
+
+.userLoginCards {
+  display: grid;
+  position: relative;
+  gap: 1.6rem;
+
+  @include onTablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.userLoginCard {
+  display: grid;
+  padding: 2.4rem;
+  column-gap: 1.2rem;
+  row-gap: .8rem;
+  align-items: center;
+  grid-template-columns: 24px 1fr;
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px 0px rgba(68, 102, 140, 0.07);
+
+  @include onTablet {
+    display: block;
+  }
+}
+
+.userLoginIconWrapper {
+  & svg {
+    width: 24px;
+
+    @include onLaptop {
+      width: 32px;
+    }
+  }
+
+  @include onTablet {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 1.2rem;
+    background-color: var(--white);
+    border-radius: 16px;
+    box-shadow: 2px 2px 20px 0px rgba(68, 102, 140, 0.07);
+  }
+}
+
+.userCardLoginHeading {
+  color: var(--black);
+  font-family: var(--font-gilroy);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 150%;
+
+  @include onTablet {
+    margin-top: 1.6rem;
+    margin-bottom: .8rem;
+  }
+}
+
+.userLoginText {
+  grid-column: span 2;
+}

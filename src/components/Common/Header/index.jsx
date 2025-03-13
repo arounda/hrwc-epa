@@ -1,12 +1,11 @@
 'use client';
 
 import logoBlack from '@/assets/header-logo-black.svg';
-import { clientLoginUrl, newHireLoginUrl } from '@/constants/mainURLs';
+import { clientLoginUrl } from '@/constants/mainURLs';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import ButtonPrimary from '../ButtonPrimary';
-import ButtonSecondary from '../ButtonSecondary';
 import Burger from './Burger';
 import s from './header.module.scss';
 import HeaderNavigation from './HeaderNavigation';
@@ -51,7 +50,12 @@ const Header = () => {
           ${isHeaderWhite
             ? '2px 2px 20px 0px rgba(68, 102, 140, 0.07)'
             : '2px 2px 20px 0px rgba(68, 102, 140, 0)'
-          }`
+          }`,
+          backgroundColor: `
+          ${isHeaderWhite
+            ? 'white'
+            : 'transparent'
+          }`,
       }}
     >
       <div className="container">
@@ -65,23 +69,16 @@ const Header = () => {
             />
           </Link>
 
-          <div className={s.headerMain}>
-            <HeaderNavigation
-              isMenuOpen={isMenuOpen}
-              onMenuOpen={handleMenuOpen}
-            />
+          <HeaderNavigation
+            isMenuOpen={isMenuOpen}
+            onMenuOpen={handleMenuOpen}
+          />
 
+          <div className={s.headerRight}>
             <div className={s.headerCTAs}>
-              <ButtonSecondary
-                text='Client Login'
-                link={clientLoginUrl}
-                isHeader={true}
-                istargetBlank={true}
-              />
-
               <ButtonPrimary
-                text='Sign In'
-                link={newHireLoginUrl}
+                text='Login'
+                link={clientLoginUrl}
                 isHeader={true}
                 istargetBlank={true}
               />

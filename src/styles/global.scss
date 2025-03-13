@@ -21,7 +21,7 @@
   --dark-v2: #0B0B13;
 
   //use here
-
+  --light-blue-v3: #E8F3FF;
   --btn-hover-transition: 250ms;
 }
 
@@ -53,6 +53,25 @@ main {
     padding-top: 16rem;
   }
 
+  &.hero {
+    padding-top: 14.2rem;
+    padding-bottom: 6rem;
+    background-color: var(--light-blue-v3);
+
+    @include onTablet {
+      padding-top: 16rem;
+      padding-bottom: 8rem;
+    }
+
+    @include onLaptop {
+      padding-top: 18rem;
+    }
+
+    @include onLargeDesktop {
+      padding-bottom: 10rem;
+    }
+  }
+
   &.is-padding-block {
     padding-block: 10rem;
 
@@ -68,21 +87,21 @@ main {
       padding-block: 16rem;
     }
 
-    &.is-m {
-      padding-block: 8rem;
+    // &.is-m {
+    //   padding-block: 8rem;
 
-      @include onTablet {
-        padding-block: 10rem;
-      }
+    //   @include onTablet {
+    //     padding-block: 10rem;
+    //   }
 
-      @include onLaptop {
-        padding-block: 12rem;
-      }
+    //   @include onLaptop {
+    //     padding-block: 12rem;
+    //   }
 
-      @include onLargeDesktop {
-        padding-block: 14rem;
-      }
-    }
+    //   @include onLargeDesktop {
+    //     padding-block: 14rem;
+    //   }
+    // }
 
     &.is-hero {
       padding-top: 14.2rem;
@@ -221,8 +240,16 @@ main {
   color: var(--white);
 }
 
+.is-half-opacity {
+  opacity: .5;
+}
+
 .mb-8 {
   margin-bottom: .8rem;
+}
+
+.mb-16 {
+  margin-bottom: 1.6rem;
 }
 
 .mb-32 {

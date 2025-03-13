@@ -1,24 +1,6 @@
 @import '@/styles/utils/mixins';
 
-.contact {
-  background: var(--primary);
-  background-image: url('../../../assets/Contact/contact-bg-mob.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  @include onTablet {
-    background-image: url('../../../assets/Contact/contact-bg-tablet.svg');
-  }
-
-  @include onLaptop {
-    background-image: url('../../../assets/Contact/contact-bg-laptop.svg');
-  }
-
-  @include onLargeDesktop {
-    background-image: url('../../../assets/Contact/contact-bg-desktop.svg');
-  }
-}
+// .contact {}
 
 .contactWrapper {
   padding-block: 8rem;

@@ -1,30 +1,17 @@
 import Contact from '@/components/Common/Contact';
-import Compliance from '@/components/Pages/Homepage/Compliance';
-import Connect from '@/components/Pages/Homepage/Connect';
+import FAQ from '@/components/Pages/Homepage/FAQ';
 import Hero from '@/components/Pages/Homepage/Hero';
-import Mission from '@/components/Pages/Homepage/Mission';
-import Tour from '@/components/Pages/Homepage/Tour';
-import TrustedPartner from '@/components/Pages/Homepage/TrustedPartner';
+import UserLogin from '@/components/Pages/Homepage/UserLogin';
 import HeaderFooterView from '@/components/Views/HeaderFooterView';
 
 export default function Home() {
   return (
-    <div>
-      <HeaderFooterView>
-        <Hero />
+    <HeaderFooterView>
+      <Hero />
 
-        <TrustedPartner />
+      <UserLogin />
 
-        <Compliance />
-
-        <Tour />
-
-        <Mission />
-
-        <Connect />
-
-        <Contact />
-      </HeaderFooterView>
-    </div>
+      <FAQ />
+    </HeaderFooterView>
   );
 };

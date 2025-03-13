@@ -1,36 +1,18 @@
-'use client';
-
-import ButtonPrimary from '@/components/Common/ButtonPrimary';
 import s from './hero.module.scss';
-import heroImg from '@/assets/Homepage/hero-img.png';
-import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section className={s.hero}>
+    <section className='section hero'>
       <div className="container">
         <div className={s.heroMain}>
-          <h1 className='heading-h1 is-centered'>
-            Streamlined I-9 & E-Verify Compliance
+          <h1 className='heading-h1 is-centered mb-16'>
+            Access Your Payroll Documents in a Few Clicks
           </h1>
 
-          <p className={s.heroText}>
-            Stay ahead of the curve with our intuitive platform that makes I-9 and E-Verify easy, efficient, and stress-free. Compliance has never been this simple.
+          <p className='text is-centered'>
+            Our easy-to-use SaaS solution gives employees <span className="is-bold">24/7</span> access to retrieve pay stubs and tax forms—whenever you need them.
           </p>
-
-          <ButtonPrimary
-            text='Get Started'
-            link='/contact-us'
-            isButtonBlue={true}
-          />
         </div>
-
-        <Image
-          className={s.heroImg}
-          src={heroImg}
-          alt=''
-          priority
-        />
       </div>
     </section>
   )
