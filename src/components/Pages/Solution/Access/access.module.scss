@@ -1,0 +1,101 @@
+@import '@/styles/utils/mixins';
+
+.accessWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+  @include onLaptop {
+    flex-direction: row;
+    gap: 6rem;
+  }
+
+  @include onLargeDesktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.accessTop {
+  @include onLaptop {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.accessTopNum {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  font-family: var(--font-gilroy);
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.accessCards {
+  position: relative;
+  display: grid;
+  gap: 2.4rem;
+
+  @include onTablet {
+    grid-template-columns: 1fr 1fr;
+    gap: 4.8rem;
+  }
+}
+
+.accessCard {
+  display: grid;
+  column-gap: 1.2rem;
+  row-gap: .8rem;
+  align-items: center;
+  grid-template-columns: 24px 1fr;
+
+  & p {
+    grid-column: span 2;
+  }
+}
+
+.accessCardsSeparatorMob {
+  height: 1px;
+  opacity: 0.8;
+  background: linear-gradient(90deg, rgba(214, 233, 255, 0.00) 0%, #C3D6E8 50%, rgba(214, 233, 255, 0.00) 100%);
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.accessCardsSeparator,
+.accessCardsSeparatorVertical {
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  opacity: 0.8;
+  background: linear-gradient(90deg, rgba(214, 233, 255, 0.00) 0%, #C3D6E8 50%, rgba(214, 233, 255, 0.00) 100%);
+
+  @include onTablet {
+    display: block;
+  }
+}
+
+.accessCardsSeparatorVertical {
+  height: 100%;
+  width: 1px;
+  top: 0;
+  left: 50%;
+
+  background: linear-gradient(0deg, rgba(214, 233, 255, 0.00) 0%, #C3D6E8 50%, rgba(214, 233, 255, 0.00) 100%);
+}
+
+.accessHeading {
+  color: var(--black);
+  font-family: var(--font-gilroy);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 150%;
+}

@@ -2,8 +2,44 @@
 
 import { useState } from 'react';
 import s from './userLogin.module.scss';
+import { IconButton, InputAdornment, OutlinedInput } from '@mui/material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 const forgotPinURL = '#';
+
+const inputStyle = {
+  backgroundColor: 'white',
+  borderRadius: '12px',
+  fontSize: '1.6rem',
+  outline: 'none',
+  fontFamily: 'var(--font-inter)',
+  paddingRight: '1.8rem',
+  '& .MuiOutlinedInput-notchedOutline': {
+    borderColor: 'transparent',
+  },
+  '&:hover .MuiOutlinedInput-notchedOutline': {
+    borderColor: 'transparent',
+  },
+  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    borderColor: 'transparent',
+  },
+  '& input::placeholder': {
+    color: 'black',
+    opacity: .5,
+  },
+  '& .MuiOutlinedInput-input': {
+    padding: '1.6rem 1.8rem',
+  },
+};
+
+const CustomVisibility = () => (
+  <Visibility sx={{ color: 'black', opacity: .5 }} fontSize="large" />
+);
+
+const CustomVisibilityOff = () => (
+  <VisibilityOff sx={{ color: 'black', opacity: .5 }} fontSize="large" />
+);
 
 const UserLogin = () => {
   const [ formState, setFormState ] = useState({
@@ -11,20 +47,13 @@ const UserLogin = () => {
     pin: '',
     employerCode: '',
   });
+  const [ showUsername, setShowUsername ] = useState(false);
+  const [ showPin, setShowPin ] = useState(false);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  const handleClickShow = (fn) => fn((prev) => !prev);
 
-    console.log('form has been submitted', formState);
-    clearFormFields();
-  };
-
-  const clearFormFields = () => {
-    setFormState({
-      userName: '',
-      pin: '',
-      employerCode: '',
-    })
+  const preventDefault = (event) => {
+    event.preventDefault();
   };
 
   const handleInputChange = (e) => {
@@ -35,6 +64,21 @@ const UserLogin = () => {
       ...prev,
       [ name ]: value,
     }))
+  };
+
+  const clearFormFields = () => {
+    setFormState({
+      userName: '',
+      pin: '',
+      employerCode: '',
+    })
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    console.log('form has been submitted', formState);
+    clearFormFields();
   };
 
   return (
@@ -57,25 +101,56 @@ const UserLogin = () => {
               className={s.userLoginForm}
             >
               <div className={s.userLoginFormInputs}>
-                <input
-                  className={s.userLoginFormInput}
-                  placeholder='Username'
-                  type="text"
-                  name="userName"
+                <OutlinedInput
                   id="userName"
+                  type={showUsername ? 'text' : 'password'}
+                  placeholder='Username'
+                  sx={inputStyle}
+                  name='userName'
+                  required
                   onChange={handleInputChange}
                   value={formState.userName}
-                  required
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={() => handleClickShow(setShowUsername)}
+                        onMouseDown={preventDefault}
+                        onMouseUp={preventDefault}
+                        edge="end"
+                      >
+                        {showUsername
+                          ? <CustomVisibilityOff />
+                          : <CustomVisibility />
+                        }
+                      </IconButton>
+                    </InputAdornment>
+                  }
                 />
 
-                <input
-                  className={s.userLoginFormInput}
-                  placeholder='PIN'
-                  type="text"
-                  name="pin"
+                <OutlinedInput
                   id="pin"
+                  type={showPin ? 'text' : 'password'}
+                  placeholder='PIN'
+                  sx={inputStyle}
+                  name='pin'
+                  required
                   onChange={handleInputChange}
                   value={formState.pin}
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        onClick={() => handleClickShow(setShowPin)}
+                        onMouseDown={preventDefault}
+                        onMouseUp={preventDefault}
+                        edge="end"
+                      >
+                        {showPin
+                          ? <CustomVisibilityOff />
+                          : <CustomVisibility />
+                        }
+                      </IconButton>
+                    </InputAdornment>
+                  }
                 />
 
                 <input
@@ -86,6 +161,7 @@ const UserLogin = () => {
                   id="employerCode"
                   onChange={handleInputChange}
                   value={formState.employerCode}
+                  required
                 />
               </div>
 

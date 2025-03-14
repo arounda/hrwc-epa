@@ -1,0 +1,81 @@
+@import '@/styles/utils/mixins';
+
+.benefitsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  @include onTablet {
+    gap: 8rem;
+  }
+}
+
+.benefitsBlock {
+  display: grid;
+  gap: 2.4rem;
+
+  @include onTablet {
+    gap: 4rem;
+  }
+
+  @include onLaptop {
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+  }
+}
+
+.is2ndBlock {
+  & .benefitsBlockInfo {
+    @include onLaptop {
+      order: 1;
+    }
+  }
+}
+
+.benefitsBlockInfo {
+  align-self: center;
+
+  & h2 {
+    margin-bottom: 1.6rem;
+    font-family: var(--font-gilroy);
+    color: var(--Black, #0B0B13);
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 120%;
+
+    @include onLaptop {
+      text-align: left;
+    }
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  & li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 150%;
+
+    & svg {
+      min-width: 20px;
+    }
+  }
+}
+
+.benefitsBlockImage {
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+  max-width: 266px;
+}
+
+.isBenefit2Image {
+  max-width: 380px;
+}

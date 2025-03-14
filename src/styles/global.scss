@@ -64,10 +64,11 @@ main {
     }
 
     @include onLaptop {
-      padding-top: 18rem;
+      padding-top: 16rem;
     }
 
     @include onLargeDesktop {
+      padding-top: 18rem;
       padding-bottom: 10rem;
     }
   }
@@ -85,41 +86,6 @@ main {
 
     @include onLargeDesktop {
       padding-block: 16rem;
-    }
-
-    // &.is-m {
-    //   padding-block: 8rem;
-
-    //   @include onTablet {
-    //     padding-block: 10rem;
-    //   }
-
-    //   @include onLaptop {
-    //     padding-block: 12rem;
-    //   }
-
-    //   @include onLargeDesktop {
-    //     padding-block: 14rem;
-    //   }
-    // }
-
-    &.is-hero {
-      padding-top: 14.2rem;
-      padding-bottom: 10rem;
-
-      @include onTablet {
-        padding-top: 16.2rem;
-        padding-bottom: 12rem;
-      }
-
-      @include onLaptop {
-        padding-bottom: 14rem;
-      }
-
-      @include onLargeDesktop {
-        padding-top: 18rem;
-        padding-bottom: 16rem;
-      }
     }
   }
 
@@ -250,6 +216,10 @@ main {
 
 .mb-16 {
   margin-bottom: 1.6rem;
+}
+
+.mb-24 {
+  margin-bottom: 2.4rem;
 }
 
 .mb-32 {

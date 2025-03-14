@@ -1,4 +1,4 @@
-import Contact from '@/components/Common/Contact';
+import Contact from '@/components/Pages/Solution/Contact';
 import FAQ from '@/components/Pages/Homepage/FAQ';
 import Hero from '@/components/Pages/Homepage/Hero';
 import UserLogin from '@/components/Pages/Homepage/UserLogin';

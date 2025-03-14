@@ -1,0 +1,27 @@
+@import '@/styles/utils/mixins';
+
+
+.hiwCards {
+  display: grid;
+  gap: 4rem;
+
+  @include onLaptop {
+    gap: 2.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include onLargeDesktop {
+    gap: 1.6rem;
+  }
+}
+
+.hiwCard {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 1.2rem;
+  row-gap: .8rem;
+
+  & p {
+    grid-column: span 2;
+  }
+}

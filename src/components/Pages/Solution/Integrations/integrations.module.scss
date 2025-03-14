@@ -1,0 +1,35 @@
+@import '@/styles/utils/mixins';
+
+.integrations {
+  padding-block: 10rem;
+  background-color: var(--light-blue-v3);
+}
+
+.integrationsWrapper {
+  padding: 2.4rem;
+  border-radius: 24px;
+}
+
+.integrationsCards {
+  display: grid;
+  gap: 1.6rem;
+
+  @include onLaptop {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.integrationsCard {
+  display: grid;
+  padding: 2.4rem;
+  border-radius: 24px;
+  background-color: var(--white);
+
+  & h3 {
+    margin-bottom: 0.8rem;
+    font-family: var(--font-gilroy);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}
